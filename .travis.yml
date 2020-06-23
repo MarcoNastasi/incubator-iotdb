@@ -157,8 +157,9 @@ matrix:
       python: 3.7
       cache: pip
       install:
-        - pip install -r client-py/requirements.txt
+        - pip install thrift
       script:
+        - mvn clean install -DskipTests
         - python -m unittest client-py/tests/test_client.py
 cache:
   directories:
