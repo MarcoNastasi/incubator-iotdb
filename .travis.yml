@@ -153,6 +153,10 @@ matrix:
         - export "PATH=/c/mvn363/apache-maven-3.6.3/bin:$PATH"
       script:
         - mvn -P site clean package -pl site
+    - language: python
+      python: 3.7
+      script:
+        - python -m unittest client-py/tests/test_client.py
 cache:
   directories:
     - '$HOME/.m2/repository'
